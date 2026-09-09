@@ -1,0 +1,47 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+
+
+# Load dataset
+file = "usa_housing_kaggle.csv"
+df = pd.read_csv(file)
+
+# Price to df
+base = df["Price"]
+
+# statistic
+mean = base.mean()
+std = base.std()
+
+# Count values in each range
+below = (base < mean - std).sum()
+within = ((base >= mean - std) & (base <= mean + std)).sum()
+above = (base > mean + std).sum()
+
+# Convert to percentages
+total = base.count()
+perc_below = below / total * 100
+perc_within = within / total * 100
+perc_above = above / total * 100
+
+# Bar chart
+bars = plt.bar(
+    ["Below mean - 1 SD", "Within ±1 SD", "Above mean + 1 SD"],
+    [perc_below, perc_within, perc_above]
+)
+
+# Add percentages inside bars
+for bar in bars:
+    plt.text(
+        bar.get_x() + bar.get_width() / 2,
+        bar.get_height() / 2,
+        f"{bar.get_height():.1f}%",
+        ha="center",
+        va="center"
+    )
+
+plt.ylabel("Percentage (%)")
+plt.title("Percentage of Price Within One Standard Deviation of the Mean")
+plt.ylim(0, 100)
+#show
+plt.show()

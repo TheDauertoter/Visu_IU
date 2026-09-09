@@ -1,0 +1,35 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+from matplotlib.ticker import StrMethodFormatter, MultipleLocator
+
+# Load dataset
+file = "usa_housing_kaggle.csv"
+df = pd.read_csv(file)
+
+# histo plot
+plt.figure(figsize=(12, 5))
+sns.histplot(data=df, x="Price", bins=30)
+plt.title("Distribution of Price Enhanced with Statistical Information and a bin size of 30")
+plt.xlabel("Price in $")
+plt.ylabel("Frequency")
+
+# Statistical lines
+plt.axvline(df["Price"].mean(), color="crimson", linestyle="--", label="Mean")
+plt.axvline(df["Price"].median(), color="crimson", linestyle="-", label="Median")
+plt.axvline(df["Price"].mean() - df["Price"].std(),
+            color="orange", linestyle="-", label="Mean - Standard Deviation")
+plt.axvline(df["Price"].mean() + df["Price"].std(),
+            color="green", linestyle="-", label="Mean + Standard Deviation")
+
+# make x axis show 100k steps
+ax = plt.gca()
+ax.xaxis.set_major_locator(MultipleLocator(100000))
+ax.xaxis.set_major_formatter(StrMethodFormatter('${x:,.0f}'))
+
+# keep ecerything together
+plt.tight_layout()
+# print legend
+plt.legend()
+#show
+plt.show()
