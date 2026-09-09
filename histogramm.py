@@ -1,7 +1,7 @@
-import pandas as pd
 import matplotlib.pyplot as plt
+import pandas as pd
 import seaborn as sns
-from matplotlib.ticker import StrMethodFormatter, MultipleLocator
+from matplotlib.ticker import MultipleLocator, StrMethodFormatter
 
 # Load dataset
 file = "usa_housing_kaggle.csv"

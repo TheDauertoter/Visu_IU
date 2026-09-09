@@ -1,7 +1,7 @@
-import pandas as pd
 import matplotlib.pyplot as plt
-import seaborn as sns
 import numpy as np
+import pandas as pd
+import seaborn as sns
 
 # Load dataset
 file = "usa_housing_kaggle.csv"
