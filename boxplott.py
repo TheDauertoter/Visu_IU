@@ -3,11 +3,11 @@ import pandas as pd
 import seaborn as sns
 from matplotlib.ticker import StrMethodFormatter
 
-# Load dataset
+# load dataset
 file = "usa_housing_kaggle.csv"
 df = pd.read_csv(file)
 
-
+# boxplot
 plt.figure(figsize=(8, 5))
 sns.boxplot(data=df, x="Price")
 plt.title("Box Plot of Prices")

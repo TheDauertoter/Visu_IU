@@ -1,19 +1,18 @@
 import matplotlib.pyplot as plt
-import numpy as np
 import pandas as pd
 import seaborn as sns
 
-# Load dataset
+# load dataset
 file = "usa_housing_kaggle.csv"
 df = pd.read_csv(file)
 
-# Remove ZipCode
+# remove ZipCode
 df_corr = df.drop(columns=["ZipCode"])
 
-# Calculate correlation matrix
+# corr matrix
 correlation = df_corr.corr(numeric_only=True)
 
-# Create heatmap
+# create heatmap
 plt.figure(figsize=(10, 8))
 
 sns.heatmap(
@@ -26,12 +25,9 @@ sns.heatmap(
 )
 
 plt.title("Correlation Heatmap")
+
+# keep everything together
 plt.tight_layout()
+
+# show
 plt.show()
-
-pairs = correlation.where(
-    np.triu(np.ones(correlation.shape), k=1).astype(bool)
-).stack()
-
-print(pairs.sort_values(ascending=False).head(3))
-print(pairs.sort_values(ascending=True).head(3))

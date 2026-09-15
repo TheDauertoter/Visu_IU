@@ -3,7 +3,7 @@ import pandas as pd
 import seaborn as sns
 from matplotlib.ticker import StrMethodFormatter
 
-# Load dataset
+# load dataset
 file = "usa_housing_kaggle.csv"
 df = pd.read_csv(file)
 
@@ -23,5 +23,6 @@ plt.gca().xaxis.set_major_formatter(
 )
 # keep everything together
 plt.tight_layout()
+
 # show
 plt.show()

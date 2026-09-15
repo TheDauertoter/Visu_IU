@@ -3,7 +3,7 @@ import pandas as pd
 import seaborn as sns
 from matplotlib.ticker import MultipleLocator, StrMethodFormatter
 
-# Load dataset
+# load dataset
 file = "usa_housing_kaggle.csv"
 df = pd.read_csv(file)
 
@@ -14,7 +14,7 @@ plt.title("Distribution of Price Enhanced with Statistical Information and a bin
 plt.xlabel("Price in $")
 plt.ylabel("Frequency")
 
-# Statistical lines
+# statistical lines - enrich histogram
 plt.axvline(df["Price"].mean(), color="crimson", linestyle="--", label="Mean")
 plt.axvline(df["Price"].median(), color="crimson", linestyle="-", label="Median")
 plt.axvline(df["Price"].mean() - df["Price"].std(),
@@ -27,9 +27,11 @@ ax = plt.gca()
 ax.xaxis.set_major_locator(MultipleLocator(100000))
 ax.xaxis.set_major_formatter(StrMethodFormatter('${x:,.0f}'))
 
-# keep ecerything together
+# keep everything together
 plt.tight_layout()
+
 # print legend
 plt.legend()
+
 #show
 plt.show()
