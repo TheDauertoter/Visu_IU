@@ -5,7 +5,7 @@ This repository contains the files used for the project report of the course **D
 ## Contents
 
 * `usa_housing_kaggle.csv` – USA Housing dataset from [Kaggle](https://www.kaggle.com/datasets/afifahnajla/usa-housing-kaggle)
-* `data_quality.py` – Date quality check for the kaggle dataset
+* `data_quality.py` – Data quality check for the kaggle dataset
 * `binsizes.py` – Histogram of `Price` with different bin sizes
 * `histogramm.py` – Histogram of `Price` with mean, median and standard deviation
 * `perc_par.py` – Percentage distribution of `Price` relative to mean ± standard deviation
