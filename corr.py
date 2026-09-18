@@ -24,7 +24,7 @@ sns.heatmap(
     vmax=1
 )
 
-plt.title("Correlation Heatmap")
+
 
 # keep everything together
 plt.tight_layout()

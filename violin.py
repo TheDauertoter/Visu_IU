@@ -15,7 +15,7 @@ sns.violinplot(
     inner="box",
     linewidth= 2.5
     )
-plt.title("Violin Plot of Price")
+
 plt.xlabel("Price in $")
 
 plt.gca().xaxis.set_major_formatter(

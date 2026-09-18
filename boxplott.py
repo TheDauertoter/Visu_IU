@@ -10,7 +10,7 @@ df = pd.read_csv(file)
 # boxplot
 plt.figure(figsize=(8, 5))
 sns.boxplot(data=df, x="Price")
-plt.title("Box Plot of Prices")
+
 plt.xlabel("Price in $")
 plt.gca().xaxis.set_major_formatter(
     StrMethodFormatter('{x:,.0f}')

@@ -10,7 +10,7 @@ df = pd.read_csv(file)
 # histo plot
 plt.figure(figsize=(12, 5))
 sns.histplot(data=df, x="Price", bins=30)
-plt.title("Distribution of Price Enhanced with Statistical Information and a bin size of 30")
+
 plt.xlabel("Price in $")
 plt.ylabel("Frequency")
 
